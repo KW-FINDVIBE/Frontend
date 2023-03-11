@@ -1,0 +1,15 @@
+interface GridLayoutProps {
+  children: React.ReactNode | React.ReactNode[];
+}
+
+const GridLayout: React.FunctionComponent<GridLayoutProps> = ({ children }) => {
+  return (
+    <div className="w-full flex justify-center">
+      <div className="w-full max-w-maxwidth grid grid-cols-6 top-[64px] tablet:grid-cols-12 gap-[20px] px-[20px] tablet:px-[40px]">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export default GridLayout;
