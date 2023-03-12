@@ -3,7 +3,10 @@ interface LogoProps {
   width?: number;
 }
 
-const Logo: React.FunctionComponent<LogoProps> = ({ onClick, width = 150 }) => {
+const LogoSvg: React.FunctionComponent<LogoProps> = ({
+  onClick,
+  width = 150,
+}) => {
   return (
     <svg
       width={width}
@@ -86,4 +89,4 @@ const Logo: React.FunctionComponent<LogoProps> = ({ onClick, width = 150 }) => {
   );
 };
 
-export default Logo;
+export default LogoSvg;

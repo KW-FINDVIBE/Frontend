@@ -1,12 +1,12 @@
-import Logo from "../../assets/Svg/Logo";
+import LogoSvg from "../../assets/Svg/LogoSvg";
 import GridLayout from "./../Layout/GridLayout";
 
 const GlobalNavigationBar: React.FunctionComponent = () => {
   return (
-    <nav className="fixed w-full bg-white h-[64px] drop-shadow-xl flex items-center justify-center text-[0.875em] whitespace-pre">
+    <nav className="fixed z-50 w-full bg-white h-[64px] drop-shadow-xl flex items-center justify-center text-[0.875em] whitespace-pre">
       <GridLayout>
         <button className="justify-self-start">
-          <Logo />
+          <LogoSvg />
         </button>
         <div className="ml-[20px] col-start-4 w-[220px] flex items-center justify-between ">
           <button>후기</button>

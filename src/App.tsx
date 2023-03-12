@@ -4,7 +4,7 @@ import IndexPage from "./pages/IndexPage";
 
 const App: React.FunctionComponent = () => {
   return (
-    <div className="w-screen min-h-screen font-pretendard sm:text-[16px]">
+    <div className="w-full min-h-screen font-pretendard tablet:text-[16px] whitespace-pre-line">
       <Routes>
         <Route path="/" element={<IndexPage />}></Route>
       </Routes>
