@@ -1,12 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 interface LogoProps {
-  onClick?: () => void;
   width?: number;
 }
 
-const LogoSvg: React.FunctionComponent<LogoProps> = ({
-  onClick,
-  width = 150,
-}) => {
+const LogoSvg: React.FunctionComponent<LogoProps> = ({ width = 150 }) => {
+  const navigate = useNavigate();
   return (
     <svg
       width={width}
@@ -15,6 +14,7 @@ const LogoSvg: React.FunctionComponent<LogoProps> = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="cursor-pointer"
+      onClick={() => navigate("/")}
     >
       <rect
         width="24.9774"

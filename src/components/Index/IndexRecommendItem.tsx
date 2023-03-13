@@ -23,7 +23,7 @@ const IndexRecommendItem: React.FunctionComponent<IndexRecommendProps> = ({
           }}
         ></div>
       </div>
-      <div className="col-start-10 col-end-12 justify-self-end self-center text-[#A0a0a0]">
+      <div className="col-start-10 col-end-12 justify-self-end self-center text-gray">
         {count + "회"}
       </div>
     </>

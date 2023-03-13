@@ -1,11 +1,13 @@
 import IndexIdea from "../../assets/Img/IndexIdea.png";
+import { useNavigate } from "react-router-dom";
 
 const IndexIntro: React.FunctionComponent = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="relative col-start-2 col-end-6 text-justify top-[64px] my-[4em]">
-        <div className="font-bold text-[5.9vw] maxwidth:text-[6em] ">{`추억을 찾는\n강력한 도구`}</div>
-        <div className="text-[#A0A0A0]">
+        <div className="font-bold text-[5.7vw] maxwidth:text-[6em] ">{`추억을 찾는\n강력한 도구`}</div>
+        <div className="text-gray">
           추억의 장소, 궁금한 장소, 신기한 사진 등. FINDVIBE와 함께 쉽고 빠르게
           추억의 장소를 찾아보세요.
         </div>
@@ -15,7 +17,10 @@ const IndexIntro: React.FunctionComponent = () => {
               인기장소 보기
             </button>
           </div>
-          <button className="col-span-2 bg-gradient-to-r w-full from-deeporange to-shalloworange px-4 py-2 rounded-full text-white flex items-center justify-center font-bold">
+          <button
+            className="col-span-2 bg-gradient-to-r w-full from-deeporange to-shalloworange px-4 py-2 rounded-full text-white flex items-center justify-center font-bold"
+            onClick={() => navigate("/findvibe")}
+          >
             잃은추억 찾기
           </button>
         </div>
