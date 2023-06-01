@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import LogoSvg from "../../assets/Svg/LogoSvg";
 import GridLayout from "./../Layout/GridLayout";
 import { useNavigate } from "react-router-dom";

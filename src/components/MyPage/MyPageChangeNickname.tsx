@@ -1,7 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useLogin } from "../../State/userInfo";
-import { useState } from 'react';
-import { sendCheckDuplicateNicknameRequest, sendUpdateNicknameRequest } from "../../API/user";
-import { useEffect } from 'react';
+import { useState } from "react";
+import {
+  sendCheckDuplicateNicknameRequest,
+  sendUpdateNicknameRequest,
+} from "../../API/user";
+import { useEffect } from "react";
 
 const MyPageChangeNickname: React.FunctionComponent = () => {
   const userInfo = useLogin();
@@ -9,40 +13,42 @@ const MyPageChangeNickname: React.FunctionComponent = () => {
   const [checkSuccess, setCheckSuccess] = useState(false);
 
   const checkDuplicate = () => {
-    if(userInfo.nickname === newNickname){
+    if (userInfo.nickname === newNickname) {
       console.log("같은 닉네임입니다.");
       return;
     }
-    
-    sendCheckDuplicateNicknameRequest(newNickname).then((res)=>{
-      if(!res.success){
-        setCheckSuccess(false);
-        console.log(res.error);
-        return;
-      }
 
-      setCheckSuccess(true);
+    sendCheckDuplicateNicknameRequest(newNickname)
+      .then((res) => {
+        if (!res.success) {
+          setCheckSuccess(false);
+          console.log(res.error);
+          return;
+        }
 
-    }).catch((err)=>{
-      console.log(err);
-    });
-
-  }
+        setCheckSuccess(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const updateNickname = () => {
-    sendUpdateNicknameRequest(newNickname).then((res)=>{
-      console.log(res);
-      userInfo.setNickname(newNickname);
-    }).catch((err)=>{
-      console.log(err);
-    });
-  }
+    sendUpdateNicknameRequest(newNickname)
+      .then((res) => {
+        console.log(res);
+        userInfo.setNickname(newNickname);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-  useEffect(()=>{
-    if(checkSuccess){
+  useEffect(() => {
+    if (checkSuccess) {
       setCheckSuccess(false);
     }
-  },[newNickname]);
+  }, [newNickname]);
 
   return (
     <main className="col-span-6 tablet:col-span-8 tablet:h-[calc(100svh-64px)] flex flex-col p-4 justify-center">
@@ -59,12 +65,25 @@ const MyPageChangeNickname: React.FunctionComponent = () => {
           type="text"
           placeholder="닉네임"
           value={newNickname}
-          onChange = {(e)=>{ setNewNickname(e.target.value);}}
+          onChange={(e) => {
+            setNewNickname(e.target.value);
+          }}
         />
-        <button className="mt-[1em] border p-2 rounded-[0.5em] bg-[#e0e0e0] text-gray font-bold " onClick={()=>{checkDuplicate();}}>
+        <button
+          className="mt-[1em] border p-2 rounded-[0.5em] bg-[#e0e0e0] text-gray font-bold "
+          onClick={() => {
+            checkDuplicate();
+          }}
+        >
           중복확인
         </button>
-        <button className="w-full mt-[1em] p-4 bg-deeporange rounded-[0.8em] text-white font-bold text-[1.5em] disabled:opacity-20" onClick={()=>{updateNickname();}} disabled={!checkSuccess}>
+        <button
+          className="w-full mt-[1em] p-4 bg-deeporange rounded-[0.8em] text-white font-bold text-[1.5em] disabled:opacity-20"
+          onClick={() => {
+            updateNickname();
+          }}
+          disabled={!checkSuccess}
+        >
           변경하기
         </button>
       </div>

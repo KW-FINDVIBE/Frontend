@@ -1,4 +1,5 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { lazy, Suspense, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import IndexPage from "./pages/IndexPage";
 import MyPlacePage from "./pages/MyPlacePage";

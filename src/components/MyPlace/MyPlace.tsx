@@ -4,8 +4,8 @@ import "./Calender.css";
 import { useState } from "react";
 import { Value } from "react-calendar/dist/cjs/shared/types";
 import moment from "moment";
-import axios from "axios";
 import GoogleMapApi from "../GoogleMap/GoogleMapApi";
+// import axios from "axios";
 
 const MyPlace: React.FunctionComponent = () => {
   const [date, setDate] = useState<Value>(new Date());
@@ -30,6 +30,7 @@ const MyPlace: React.FunctionComponent = () => {
       ],
     ],
   };
+  /*
   const getAddressFromLatLng = async (latlng: { lat: number; lng: number }) => {
     try {
       const address = await axios.get(
@@ -39,7 +40,7 @@ const MyPlace: React.FunctionComponent = () => {
     } catch {
       alert("주소를 가져오는데 실패했습니다.");
     }
-  };
+  };*/
 
   return (
     <main className="relative w-full top-[64px] min-h-[calc(100vh-64px)]">

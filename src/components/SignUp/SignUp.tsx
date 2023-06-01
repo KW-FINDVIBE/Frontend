@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-control-regex */
 import Footer from "../Footer/Footer";
 import GridLayout from "../Layout/GridLayout";

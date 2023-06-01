@@ -1,4 +1,3 @@
-import { useLogin } from "../../State/userInfo";
 import { MyPageState } from "./MyPage";
 import MyPageChangeNickname from "./MyPageChangeNickname";
 import MyPageChangePassword from "./MyPageChangePassword";
@@ -11,9 +10,7 @@ interface MyPageRightInfoProps {
 
 const MyPageRightInfo: React.FunctionComponent<MyPageRightInfoProps> = ({
   selectedState,
-  setSelectedState,
 }) => {
-  const userInfo = useLogin();
   switch (selectedState) {
     case MyPageState.CHANGENICKNAME:
       return <MyPageChangeNickname />;
